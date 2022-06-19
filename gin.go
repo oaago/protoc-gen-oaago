@@ -13,7 +13,7 @@ import (
 
 const (
 	contextPkg         = protogen.GoImportPath("context")
-	ginPkg             = protogen.GoImportPath("github.com/oaago/oaago/oaa")
+	ginPkg             = protogen.GoImportPath("github.com/oaago/server/oaa")
 	errPkg             = protogen.GoImportPath("errors")
 	metadataPkg        = protogen.GoImportPath("google.golang.org/grpc/metadata")
 	clientv3Pkg        = protogen.GoImportPath("go.etcd.io/etcd/client/v3")
