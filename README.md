@@ -14,7 +14,7 @@
 注意由于使用 embed 特性，Go 版本必须大于 1.16
 
 ```bash
-go install github.com/mohuishou/protoc-gen-go-gin@latest
+go install github.com/oaago/protoc-gen-oaago@latest
 ```
 
 ## 使用说明
@@ -66,9 +66,9 @@ service BlogService {
   example/api/product/app/v1/v1.proto
 ```
 
-## 相关介绍
+<!-- ## 相关介绍
 
 > 待发布
 
 - Go工程化(四) API 设计上: 项目结构 & 设计
-- Go工程化(五) API 设计下: 基于 protobuf 自动生成 gin 代码
+- Go工程化(五) API 设计下: 基于 protobuf 自动生成 gin 代码 -->
