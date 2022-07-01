@@ -19,7 +19,7 @@ const (
 	clientv3Pkg        = protogen.GoImportPath("go.etcd.io/etcd/client/v3")
 	resolverPkg        = protogen.GoImportPath("go.etcd.io/etcd/client/v3/naming/resolver")
 	grpcPkg            = protogen.GoImportPath("google.golang.org/grpc")
-	logxPkg            = protogen.GoImportPath("github.com/oaago/component/logx")
+	logxPkg            = protogen.GoImportPath("github.com/oaago/cloud/logx")
 	deprecationComment = "// Deprecated: Do not use."
 )
 
