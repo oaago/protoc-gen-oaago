@@ -64,7 +64,7 @@ service BlogService {
   protoc -I ./example/api \
   --go_out ./example/api --go_opt=paths=source_relative \
   --go-gin_out ./example/api --go-gin_opt=paths=source_relative \
-  example/api/product/app/v1/v1.proto
+  example/api/app.proto
 ```
 
 <!-- ## 相关介绍

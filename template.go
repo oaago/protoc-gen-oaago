@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-//go:embed template.go.tpl
+//go:embed templatev1.go.tpl
 var tpl string
 
 type service struct {
