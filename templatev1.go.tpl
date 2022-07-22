@@ -84,22 +84,54 @@ func (s *{{$.Name}}) {{ .HandlerName }} (ctx *oaa.Ctx) {
 	var in {{.Request}}
 {{if .HasPathParams }}
 	if err := ctx.ShouldBindUri(&in); err != nil {
+		// 获取validator.ValidationErrors类型的errors
+        	errs, ok := err.(v10.ValidationErrors)
+        	if !ok {
+        		// 非validator.ValidationErrors类型错误直接返回
+        		logx.Logger.Error(errs.Translate(translator.Trans))
+        		s.resp.ParamsError(ctx, err)
+        		return
+        	}
 		s.resp.ParamsError(ctx, err)
 		return
 	}
 {{end}}
 {{if eq .Method "GET" "DELETE" }}
 	if err := ctx.ShouldBindQuery(&in); err != nil {
+		// 获取validator.ValidationErrors类型的errors
+        	errs, ok := err.(v10.ValidationErrors)
+        	if !ok {
+        		// 非validator.ValidationErrors类型错误直接返回
+        		logx.Logger.Error(errs.Translate(translator.Trans))
+        		s.resp.ParamsError(ctx, err)
+        		return
+        	}
 		s.resp.ParamsError(ctx, err)
 		return
 	}
 {{else if eq .Method "POST" "PUT" }}
 	if err := ctx.ShouldBindJSON(&in); err != nil {
+		// 获取validator.ValidationErrors类型的errors
+        	errs, ok := err.(v10.ValidationErrors)
+        	if !ok {
+        		// 非validator.ValidationErrors类型错误直接返回
+        		logx.Logger.Error(errs.Translate(translator.Trans))
+        		s.resp.ParamsError(ctx, err)
+        		return
+        	}
 		s.resp.ParamsError(ctx, err)
 		return
 	}
 {{else}}
 	if err := ctx.ShouldBind(&in); err != nil {
+	// 获取validator.ValidationErrors类型的errors
+    	errs, ok := err.(v10.ValidationErrors)
+    	if !ok {
+    		// 非validator.ValidationErrors类型错误直接返回
+    		logx.Logger.Error(errs.Translate(translator.Trans))
+    		s.resp.ParamsError(ctx, err)
+    		return
+    	}
 		s.resp.ParamsError(ctx, err)
 		return
 	}
@@ -121,7 +153,7 @@ func (s *{{$.Name}}) {{ .HandlerName }} (ctx *oaa.Ctx) {
 
 func (s *{{$.Name}}) RegisterService() {
 {{range .Methods}}
-		s.router.Handle("{{.Method}}", "{{.Path}}", oaa.NewHandler(s.{{ .HandlerName }}))
+s.router.Handle("{{.Method}}", "{{.Path}}", oaa.NewHandler(s.{{ .HandlerName }}))
 {{end}}
 }
 
