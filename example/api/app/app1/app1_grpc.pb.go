@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.20.1
-// source: app/app1.proto
+// source: contract/app/app1.proto
 
 package app1
 
@@ -103,5 +103,5 @@ var CccDdd_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "app/app1.proto",
+	Metadata: "contract/app/app1.proto",
 }

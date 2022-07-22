@@ -1,6 +1,7 @@
 package code
+
 import (
-"fmt"
+	"fmt"
 )
 
 type ecode struct {

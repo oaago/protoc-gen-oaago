@@ -61,9 +61,11 @@ service BlogService {
 ### 文件生成
 
 ```bash
-  protoc -I ./contract \
+  cd example
+  protoc -I ./ \
   --proto_path=$GOPATH/src \
   --proto_path=${GOPATH}/pkg/mod \
+  --proto_path=./google \
   --proto_path=${GOPATH}/pkg/mod/github.com/gogo/protobuf@v1.3.2 \
   --govalidators_out=./api \
   --go_out=./api --go_opt=paths=import \
@@ -75,8 +77,10 @@ service BlogService {
   --grpc-gateway_opt generate_unbound_methods=true \
   --grpc-gateway_opt register_func_suffix=GW \
   --grpc-gateway_opt allow_delete_body=true \
+  --doc_out=./doc \
+  --doc_opt=html,index.html \
   --openapiv2_out ./doc --openapiv2_opt logtostderr=true \
-  ./contract/app/app.proto
+  ./contract/app/app1.proto
 ```
 
 <!-- ## 相关介绍

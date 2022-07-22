@@ -11,6 +11,7 @@ import (
 	grpcrecovery "github.com/grpc-ecosystem/go-grpc-middleware/recovery"
 	grpcctxtags "github.com/grpc-ecosystem/go-grpc-middleware/tags"
 	grpcopentracing "github.com/grpc-ecosystem/go-grpc-middleware/tracing/opentracing"
+	grpc_validator "github.com/grpc-ecosystem/go-grpc-middleware/validator"
 	grpcprometheus "github.com/grpc-ecosystem/go-grpc-prometheus"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"github.com/oaago/cloud/logx"
@@ -88,6 +89,7 @@ func main() {
 				}),
 				grpcrecovery.StreamServerInterceptor(),
 				ratelimit.StreamServerInterceptor(limiter),
+				grpc_validator.StreamServerInterceptor(),
 			)),
 			grpc.UnaryInterceptor(grpcmiddleware.ChainUnaryServer(
 				grpcctxtags.UnaryServerInterceptor(),
@@ -99,6 +101,7 @@ func main() {
 				}),
 				grpcrecovery.UnaryServerInterceptor(),
 				ratelimit.UnaryServerInterceptor(limiter),
+				grpc_validator.UnaryServerInterceptor(),
 			)),
 		)
 		// 2 注册服务

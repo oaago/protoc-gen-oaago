@@ -44,7 +44,7 @@ message GetArticlesResp {
 }
 
 message Article {
-  string title  = 1;
+  string title = 1;
   string content = 2;
   // @inject_tag: form:"author_id" uri:"author_id"
   int32 author_id = 3;
