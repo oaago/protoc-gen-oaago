@@ -89,6 +89,7 @@ require (
 	github.com/natefinch/lumberjack v2.0.0+incompatible // indirect
 	github.com/oaago/common v0.0.0-20220619090039-63184afcc085 // indirect
 	github.com/oaago/gateway v0.0.0-20220619080224-02555976e8ac // indirect
+	github.com/oaago/go-proto-validators v0.3.4 // indirect
 	github.com/olivere/elastic/v7 v7.0.32 // indirect
 	github.com/opentracing/opentracing-go v1.2.0 // indirect
 	github.com/pelletier/go-toml v1.9.5 // indirect

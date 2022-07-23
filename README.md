@@ -66,7 +66,6 @@ service BlogService {
   --proto_path=$GOPATH/src \
   --proto_path=${GOPATH}/pkg/mod \
   --proto_path=./google \
-  --proto_path=${GOPATH}/pkg/mod/github.com/gogo/protobuf@v1.3.2 \
   --govalidators_out=./api \
   --go_out=./api --go_opt=paths=import \
   --go-grpc_out=./api --go-grpc_opt=paths=import \
@@ -80,7 +79,7 @@ service BlogService {
   --doc_out=./doc \
   --doc_opt=html,index.html \
   --openapiv2_out ./doc --openapiv2_opt logtostderr=true \
-  ./contract/app/app1.proto
+  ./contract/app/app.proto
 ```
 
 <!-- ## 相关介绍
@@ -89,3 +88,4 @@ service BlogService {
 
 - Go工程化(四) API 设计上: 项目结构 & 设计
 - Go工程化(五) API 设计下: 基于 protobuf 自动生成 gin 代码 -->
+

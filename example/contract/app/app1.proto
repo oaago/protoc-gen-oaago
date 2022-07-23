@@ -4,7 +4,7 @@ syntax = "proto3";
 option go_package = "app/app1";
 
 package app.app1;
-import "github.com/mwitkow/go-proto-validators@v0.3.2/validator.proto";
+import "github.com/oaago/go-proto-validators@v0.3.4/validator.proto";
 
 // 描述该服务的信息
 service CccDdd {

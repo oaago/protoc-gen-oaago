@@ -1,0 +1,56 @@
+scopes:
+    - ./
+protoc: v3.21.3
+protocWorkDir: ""
+plugins:
+    protoc-gen-go: google.golang.org/protobuf/cmd/protoc-gen-go@v1.28.0
+    protoc-gen-go-grpc: google.golang.org/grpc/cmd/protoc-gen-go-grpc@ad51f572fd270f2323e3aa2c1d2775cab9087af2
+    protoc-gen-grpc-gateway: github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v2.11.0
+    protoc-gen-openapiv2: github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2.11.0
+    protoc-gen-oaago: https://github.com/oaago/protoc-gen-oaago@latest
+    protoc-gen-govalidators: https://github.com/oaago/go-proto-validators@v0.3.4
+    protoc-gen-doc: github.com/pseudomuto/protoc-gen-doc@v1.5.1
+repositories:
+    GOGO_PROTOBUF: https://github.com/gogo/protobuf@226206f39bd7276e88ec684ea0028c18ec2c91ae
+    GOOGLE_APIS: https://github.com/googleapis/googleapis@75e9812478607db997376ccea247dd6928f70f45
+options:
+    - --go_out=./api
+    - --go_opt=paths=import
+    - --go-grpc_out=./api
+    - --go-grpc_opt=paths=import
+    - --grpc-gateway_out=./api
+    - --grpc-gateway_opt=paths=import
+    - --go-grpc_out=./api
+    - --go-grpc_opt=paths=import
+    - --govalidators_out=./api
+    - --doc_out=./doc
+    - --openapiv2_out=./doc
+importPaths:
+    - .
+    - $GOPATH
+    - $POWERPROTO_INCLUDE
+    - $SOURCE_RELATIVE
+    - $GOOGLE_APIS/github.com/googleapis/googleapis
+    - $GOGO_PROTOBUF
+postActions: []
+postShell: ""
+#
+#
+#               protoc -I ./ \
+#               --proto_path=$GOPATH/src \
+#               --proto_path=${GOPATH}/pkg/mod \
+#               --proto_path=./google \
+#               --govalidators_out=./api \
+#               --go_out=./api --go_opt=paths=import \
+#               --go-grpc_out=./api --go-grpc_opt=paths=import \
+#               --oaago_out=./api \
+#               --oaago_opt=paths=import \
+#               --grpc-gateway_out ./api --grpc-gateway_opt paths=import \
+#               --grpc-gateway_opt logtostderr=true \
+#               --grpc-gateway_opt generate_unbound_methods=true \
+#               --grpc-gateway_opt register_func_suffix=GW \
+#               --grpc-gateway_opt allow_delete_body=true \
+#               --doc_out=./doc \
+#               --doc_opt=html,index.html \
+#               --openapiv2_out ./doc --openapiv2_opt logtostderr=true \
+#               ./contract/app/app.proto

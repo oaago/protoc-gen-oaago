@@ -404,6 +404,10 @@ github.com/oaago/common v0.0.0-20220619090039-63184afcc085 h1:vLTpcbDiZ0/Zwn8XsU
 github.com/oaago/common v0.0.0-20220619090039-63184afcc085/go.mod h1:Btu0RqVVrM1gi4OyH+50I8mekw1d4J1RpfBpyFt8iBU=
 github.com/oaago/gateway v0.0.0-20220619080224-02555976e8ac h1:qElJE3VIZUhtBHCkSahO1gNLn0YpXMSvF66DBIRsJa0=
 github.com/oaago/gateway v0.0.0-20220619080224-02555976e8ac/go.mod h1:KcRCiN4DuquN+izMaK0RbpyPeSsdGGFTcgnXTZ3ik50=
+github.com/oaago/go-proto-validators v0.3.3 h1:dSE5QihvU0qn70I731qlqQxsPS41kfMnu6whe0LXsMQ=
+github.com/oaago/go-proto-validators v0.3.3/go.mod h1:DAjnPjfygrpS+fVvY2aU3gwkqXAnrGYtMIiloBHjdc8=
+github.com/oaago/go-proto-validators v0.3.4 h1:GiNrmo9vJylplxx9seGnvZCZ4txSehQiS4jIVPIQg+g=
+github.com/oaago/go-proto-validators v0.3.4/go.mod h1:DAjnPjfygrpS+fVvY2aU3gwkqXAnrGYtMIiloBHjdc8=
 github.com/oaago/server v0.0.2 h1:G8/i5KGswRFPNVhlYSoTrnlWEyGFxrAtF1lMGnmgpNQ=
 github.com/oaago/server v0.0.2/go.mod h1:cX/VAY4CWKHFvd4C4ZioyBjemkY1Z+7CjfCaQYQvbi4=
 github.com/olivere/elastic/v7 v7.0.32 h1:R7CXvbu8Eq+WlsLgxmKVKPox0oOwAE/2T9Si5BnvK6E=
