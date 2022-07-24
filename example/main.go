@@ -17,9 +17,10 @@ import (
 	"github.com/oaago/cloud/logx"
 	v1 "github.com/oaago/protoc-gen-oaago/example/api/app/app"
 	"github.com/oaago/protoc-gen-oaago/example/api/app/app1"
-	"github.com/oaago/protoc-gen-oaago/example/code"
+	"github.com/oaago/protoc-gen-oaago/example/const"
 	"github.com/oaago/server/oaa"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/codes"
 	"google.golang.org/protobuf/encoding/protojson"
 	"log"
 	"net"
@@ -47,14 +48,14 @@ func (c CccDddServer) ApiCccDddService(ctx context.Context, request *app1.CccDdd
 
 func (s BlogServiceServer) CreateArticle(ctx context.Context, article *v1.Article) (*v1.Article, error) {
 	if article.AuthorId < 1 {
-		return nil, code.Errorf(http.StatusBadRequest, 400, "author id must > 0")
+		return nil, _const.Errorf(http.StatusBadRequest, 400, "author id must > 0")
 	}
 	return article, nil
 }
 
 func (s BlogServiceServer) GetArticles(ctx context.Context, req *v1.GetArticlesReq) (*v1.GetArticlesResp, error) {
 	if req.AuthorId < 0 {
-		return nil, code.Errorf(http.StatusBadRequest, 400, "author id must >= 0")
+		return nil, _const.Errorf(http.StatusBadRequest, 400, "author id must >= 0")
 	}
 	return &v1.GetArticlesResp{
 		Total: 1,
@@ -69,39 +70,48 @@ func (s BlogServiceServer) GetArticles(ctx context.Context, req *v1.GetArticlesR
 }
 
 type alwaysPassLimiter struct{}
+type Recovery struct {
+}
 
 func (*alwaysPassLimiter) Limit() bool {
 	return false
+}
+
+func (re Recovery) RecoveryInterceptor() grpcrecovery.Option {
+	return grpcrecovery.WithRecoveryHandler(func(p interface{}) (err error) {
+		return grpc.Errorf(codes.Unknown, "panic triggered: %v", p)
+	})
 }
 
 func main() {
 	go func() {
 		// 1 初始化 grpc 对象
 		limiter := &alwaysPassLimiter{}
+		recovery := &Recovery{}
 		grpcServer := grpc.NewServer(
 			grpc.StreamInterceptor(grpcmiddleware.ChainStreamServer(
+				grpczap.StreamServerInterceptor(logx.Logx),
 				grpcctxtags.StreamServerInterceptor(),
 				grpcopentracing.StreamServerInterceptor(),
 				grpcprometheus.StreamServerInterceptor,
-				grpczap.StreamServerInterceptor(logx.Logx),
 				grpcauth.StreamServerInterceptor(func(ctx context.Context) (context.Context, error) {
 					return nil, nil
 				}),
-				grpcrecovery.StreamServerInterceptor(),
 				ratelimit.StreamServerInterceptor(limiter),
 				grpc_validator.StreamServerInterceptor(),
+				grpcrecovery.StreamServerInterceptor(recovery.RecoveryInterceptor()),
 			)),
 			grpc.UnaryInterceptor(grpcmiddleware.ChainUnaryServer(
+				grpczap.UnaryServerInterceptor(logx.Logx),
 				grpcctxtags.UnaryServerInterceptor(),
 				grpcopentracing.UnaryServerInterceptor(),
 				grpcprometheus.UnaryServerInterceptor,
-				grpczap.UnaryServerInterceptor(logx.Logx),
+				ratelimit.UnaryServerInterceptor(limiter),
 				grpcauth.UnaryServerInterceptor(func(ctx context.Context) (context.Context, error) {
 					return nil, nil
 				}),
-				grpcrecovery.UnaryServerInterceptor(),
-				ratelimit.UnaryServerInterceptor(limiter),
 				grpc_validator.UnaryServerInterceptor(),
+				grpcrecovery.UnaryServerInterceptor(recovery.RecoveryInterceptor()),
 			)),
 		)
 		// 2 注册服务

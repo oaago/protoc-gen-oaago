@@ -1,0 +1,6 @@
+server:
+  name: demo
+  port: 9932
+  env: local
+  version: 1.0
+  weight: 1

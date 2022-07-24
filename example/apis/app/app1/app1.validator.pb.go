@@ -7,6 +7,7 @@ import (
 	fmt "fmt"
 	math "math"
 	proto "github.com/golang/protobuf/proto"
+	_ "base/resp"
 	_ "github.com/oaago/go-proto-validators"
 	regexp "regexp"
 	github_com_oaago_go_proto_validators "github.com/oaago/go-proto-validators"
@@ -70,6 +71,11 @@ var _regex_CccDddReply_Message = regexp.MustCompile(`^[A-Za-z]+$`)
 func (this *CccDddReply) Validate() error {
 	if !_regex_CccDddReply_Message.MatchString(this.Message) {
 		return github_com_oaago_go_proto_validators.FieldError("Message", fmt.Errorf(`value '%v' must be a string conforming to regex "^[A-Za-z]+$"`, this.Message))
+	}
+	if this.Data != nil {
+		if err := github_com_oaago_go_proto_validators.CallValidatorIfExists(this.Data); err != nil {
+			return github_com_oaago_go_proto_validators.FieldError("Data", err)
+		}
 	}
 	return nil
 }

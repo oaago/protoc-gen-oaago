@@ -1,0 +1,87 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "contract/biz/app/app1.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "CccDdd"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "app1CccDddReply": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string",
+          "title": "结果信息"
+        },
+        "data": {
+          "$ref": "#/definitions/respBaseResp"
+        }
+      },
+      "title": "Hello返回结果"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "respBaseResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/respData"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "respData": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "age": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  }
+}

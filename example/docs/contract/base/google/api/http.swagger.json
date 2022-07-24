@@ -1,14 +1,9 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "contract/app/app1.proto",
+    "title": "contract/base/google/api/http.proto",
     "version": "version not set"
   },
-  "tags": [
-    {
-      "name": "CccDdd"
-    }
-  ],
   "consumes": [
     "application/json"
   ],
@@ -17,16 +12,6 @@
   ],
   "paths": {},
   "definitions": {
-    "app1CccDddReply": {
-      "type": "object",
-      "properties": {
-        "message": {
-          "type": "string",
-          "title": "结果信息"
-        }
-      },
-      "title": "Hello返回结果"
-    },
     "protobufAny": {
       "type": "object",
       "properties": {

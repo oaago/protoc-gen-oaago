@@ -11,6 +11,7 @@
 - [go 1.16](https://golang.org/dl/)
 - [protoc](https://github.com/protocolbuffers/protobuf)
 - [protoc-gen-go](https://github.com/protocolbuffers/protobuf-go)
+- [powerproto](github.com/storyicon/powerproto/cmd/powerproto@latest)
 
 注意由于使用 embed 特性，Go 版本必须大于 1.16
 
@@ -60,26 +61,31 @@ service BlogService {
 
 ### 文件生成
 
+#### bash生成
 ```bash
   cd example
   protoc -I ./ \
   --proto_path=$GOPATH/src \
   --proto_path=${GOPATH}/pkg/mod \
-  --proto_path=./google \
-  --govalidators_out=./api \
-  --go_out=./api --go_opt=paths=import \
-  --go-grpc_out=./api --go-grpc_opt=paths=import \
-  --oaago_out=./api \
+  --proto_path=./contract \
+  --govalidators_out=./apis \
+  --go_out=./apis --go_opt=paths=import \
+  --go-grpc_out=./apis --go-grpc_opt=paths=import \
+  --oaago_out=./apis \
   --oaago_opt=paths=import \
-  --grpc-gateway_out ./api --grpc-gateway_opt paths=import \
+  --grpc-gateway_out ./apis --grpc-gateway_opt paths=import \
   --grpc-gateway_opt logtostderr=true \
   --grpc-gateway_opt generate_unbound_methods=true \
   --grpc-gateway_opt register_func_suffix=GW \
   --grpc-gateway_opt allow_delete_body=true \
-  --doc_out=./doc \
+  --doc_out=./docs \
   --doc_opt=html,index.html \
-  --openapiv2_out ./doc --openapiv2_opt logtostderr=true \
-  ./contract/app/app.proto
+  --openapiv2_out ./docs --openapiv2_opt logtostderr=true \
+  ./contract/app/app1.proto
+```
+#### powerproto生成
+```
+go install github.com/storyicon/powerproto/cmd/powerproto@latest
 ```
 
 <!-- ## 相关介绍

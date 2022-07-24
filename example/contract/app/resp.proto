@@ -1,0 +1,14 @@
+syntax = "proto3";
+package base.resp;
+option go_package = "base/resp";
+
+message Data {
+    string name = 1;
+    int64 age = 2;
+}
+
+message BaseResp {
+    string code = 1;
+    Data data = 2;
+    string message = 3;
+}
