@@ -65,12 +65,12 @@ service BlogService {
 
 ```bash
   cd example
-  protoc -I ./ \
+  protoc -I ./ -I ./contract \
   --proto_path=$GOPATH/src \
   --proto_path=${GOPATH}/pkg/mod \
-  --proto_path=./contract \
-  --govalidators_out=./apis \
-  --go_out=./apis --go_opt=paths=import \
+  --proto_path=./contract/app \
+  --govalidators_out=paths=source_relative:./apis/ \
+  --go_out=paths=source_relative:./apis/ \
   --go-grpc_out=./apis --go-grpc_opt=paths=import \
   --oaago_out=./apis \
   --oaago_opt=paths=import \
@@ -82,7 +82,7 @@ service BlogService {
   --doc_out=./docs \
   --doc_opt=html,index.html \
   --openapiv2_out ./docs --openapiv2_opt logtostderr=true \
-  ./contract/app/app1.proto
+  ./contract/app/app.proto
 ```
 
 #### powerproto生成

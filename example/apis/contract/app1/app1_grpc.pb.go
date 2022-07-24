@@ -31,7 +31,7 @@ func NewCccDddClient(cc grpc.ClientConnInterface) CccDddClient {
 
 func (c *cccDddClient) ApiCccDddService(ctx context.Context, in *CccDddRequest, opts ...grpc.CallOption) (*CccDddReply, error) {
 	out := new(CccDddReply)
-	err := c.cc.Invoke(ctx, "/app.app1.CccDdd/ApiCccDddService", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/app.app.CccDdd/ApiCccDddService", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -70,7 +70,7 @@ func _CccDdd_ApiCccDddService_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/app.app1.CccDdd/ApiCccDddService",
+		FullMethod: "/app.app.CccDdd/ApiCccDddService",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CccDddServer).ApiCccDddService(ctx, req.(*CccDddRequest))
@@ -79,7 +79,7 @@ func _CccDdd_ApiCccDddService_Handler(srv interface{}, ctx context.Context, dec 
 }
 
 var _CccDdd_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "app.app1.CccDdd",
+	ServiceName: "app.app.CccDdd",
 	HandlerType: (*CccDddServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -88,5 +88,5 @@ var _CccDdd_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "contract/app/app1.proto",
+	Metadata: "contract/app1/app1.proto",
 }

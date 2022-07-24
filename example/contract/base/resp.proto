@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package base.resp;
 
-option go_package = "base/resp";
+option go_package = "github.com/oaago/protoc-gen-oaago/example/apis/contract/base";
 
 message Data {
     string name = 1;

@@ -1,13 +1,13 @@
 syntax = "proto3";
 
 
-option go_package = "app/app1";
+option go_package = "abc/app";
 
-package app.app1;
+package app.app;
 
 option java_multiple_files = true;
 
-import "github.com/oaago/protoc-gen-oaago/example/contract/app/resp.proto";
+import "base/resp.proto";
 import "github.com/oaago/go-proto-validators@v0.3.4/validator.proto";
 
 // 描述该服务的信息
@@ -37,5 +37,5 @@ message CccDddRequest {
 message CccDddReply {
     // 结果信息
     string message = 1 [(validator.field) = {regex: "^[A-Za-z]+$"}];
-    resp.BaseResp data = 2;
+    base.resp.BaseResp data = 2;
 }
