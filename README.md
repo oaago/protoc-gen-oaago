@@ -62,6 +62,7 @@ service BlogService {
 ### 文件生成
 
 #### bash生成
+
 ```bash
   cd example
   protoc -I ./ \
@@ -83,7 +84,9 @@ service BlogService {
   --openapiv2_out ./docs --openapiv2_opt logtostderr=true \
   ./contract/app/app1.proto
 ```
+
 #### powerproto生成
+
 ```
 go install github.com/storyicon/powerproto/cmd/powerproto@latest
 ```

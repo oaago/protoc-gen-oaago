@@ -1,5 +1,7 @@
 syntax = "proto3";
+
 package base.resp;
+
 option go_package = "base/resp";
 
 message Data {

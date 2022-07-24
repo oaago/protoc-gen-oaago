@@ -4,6 +4,7 @@ syntax = "proto3";
 option go_package = "app/app1";
 
 package app.app1;
+
 option java_multiple_files = true;
 
 import "github.com/oaago/protoc-gen-oaago/example/contract/app/resp.proto";
