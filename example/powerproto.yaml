@@ -39,7 +39,7 @@ importPaths:
     - $GOGO_PROTOBUF
     - $GOPATH/pkg/mod
     - ./contract
-postActions: []
+postActions: [ ]
 postShell: ""
 #               cd example
 #               protoc -I ./ -I ./contract \

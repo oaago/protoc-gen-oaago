@@ -175,244 +175,249 @@
         
           
           <li>
-            <a href="#contract%2fapp%2fapp.proto">contract/app/app.proto</a>
-            <ul>
-              
-                <li>
-                  <a href="#app.app.Article"><span class="badge">M</span>Article</a>
-                </li>
-              
-                <li>
-                  <a href="#app.app.GetArticlesReq"><span class="badge">M</span>GetArticlesReq</a>
-                </li>
-              
-                <li>
-                  <a href="#app.app.GetArticlesResp"><span class="badge">M</span>GetArticlesResp</a>
-                </li>
-              
-              
-              
-              
-                <li>
-                  <a href="#app.app.BlogService"><span class="badge">S</span>BlogService</a>
-                </li>
-              
-            </ul>
+              <a href="#contract%2fapp%2fapp.proto">contract/app/app.proto</a>
+              <ul>
+
+                  <li>
+                      <a href="#app.app.Article"><span class="badge">M</span>Article</a>
+                  </li>
+
+                  <li>
+                      <a href="#app.app.GetArticlesReq"><span class="badge">M</span>GetArticlesReq</a>
+                  </li>
+
+                  <li>
+                      <a href="#app.app.GetArticlesResp"><span class="badge">M</span>GetArticlesResp</a>
+                  </li>
+
+
+                  <li>
+                      <a href="#app.app.BlogService"><span class="badge">S</span>BlogService</a>
+                  </li>
+
+              </ul>
           </li>
-        
-        <li><a href="#scalar-value-types">Scalar Value Types</a></li>
+
+          <li><a href="#scalar-value-types">Scalar Value Types</a></li>
       </ul>
     </div>
 
-    
-      
-      <div class="file-heading">
+
+    <div class="file-heading">
         <h2 id="contract/app/app.proto">contract/app/app.proto</h2><a href="#title">Top</a>
-      </div>
-      <p></p>
+    </div>
+    <p></p>
 
-      
-        <h3 id="app.app.Article">Article</h3>
-        <p></p>
 
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>title</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>content</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>author_id</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p>@inject_tag: form:&#34;author_id&#34; uri:&#34;author_id&#34; </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
+    <h3 id="app.app.Article">Article</h3>
+    <p></p>
 
-          
 
-        
-      
-        <h3 id="app.app.GetArticlesReq">GetArticlesReq</h3>
-        <p></p>
+    <table class="field-table">
+        <thead>
+        <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Label</td>
+            <td>Description</td>
+        </tr>
+        </thead>
+        <tbody>
 
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>title</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>@inject_tag: form:&#34;title&#34; </p></td>
-                </tr>
-              
-                <tr>
-                  <td>page</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p>@inject_tag: form:&#34;page&#34; </p></td>
-                </tr>
-              
-                <tr>
-                  <td>page_size</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p>@inject_tag: form:&#34;page_size&#34; </p></td>
-                </tr>
-              
-                <tr>
-                  <td>author_id</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p>@inject_tag: form:&#34;author_id&#34; uri:&#34;author_id&#34; </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
+        <tr>
+            <td>title</td>
+            <td><a href="#string">string</a></td>
+            <td></td>
+            <td><p></p></td>
+        </tr>
 
-          
+        <tr>
+            <td>content</td>
+            <td><a href="#string">string</a></td>
+            <td></td>
+            <td><p></p></td>
+        </tr>
 
-        
-      
-        <h3 id="app.app.GetArticlesResp">GetArticlesResp</h3>
-        <p></p>
+        <tr>
+            <td>author_id</td>
+            <td><a href="#int32">int32</a></td>
+            <td></td>
+            <td><p>@inject_tag: form:&#34;author_id&#34; uri:&#34;author_id&#34; </p></td>
+        </tr>
 
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>total</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>articles</td>
-                  <td><a href="#app.app.Article">Article</a></td>
-                  <td>repeated</td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
+        </tbody>
+    </table>
 
-          
 
-        
-      
+    <h3 id="app.app.GetArticlesReq">GetArticlesReq</h3>
+    <p></p>
 
-      
 
-      
+    <table class="field-table">
+        <thead>
+        <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Label</td>
+            <td>Description</td>
+        </tr>
+        </thead>
+        <tbody>
 
-      
-        <h3 id="app.app.BlogService">BlogService</h3>
-        <p>blog service is a blog demo</p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>GetArticles</td>
-                <td><a href="#app.app.GetArticlesReq">GetArticlesReq</a></td>
-                <td><a href="#app.app.GetArticlesResp">GetArticlesResp</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>CreateArticle</td>
-                <td><a href="#app.app.Article">Article</a></td>
-                <td><a href="#app.app.Article">Article</a></td>
-                <td><p></p></td>
-              </tr>
-            
-          </tbody>
-        </table>
+        <tr>
+            <td>title</td>
+            <td><a href="#string">string</a></td>
+            <td></td>
+            <td><p>@inject_tag: form:&#34;title&#34; </p></td>
+        </tr>
 
-        
-          
-          
-          <h4>Methods with HTTP bindings</h4>
-          <table>
-            <thead>
-              <tr>
-                <td>Method Name</td>
-                <td>Method</td>
-                <td>Pattern</td>
-                <td>Body</td>
-              </tr>
-            </thead>
-            <tbody>
-            
-              
-              
-              <tr>
-                <td>GetArticles</td>
-                <td>GET</td>
-                <td>/v1/articles</td>
-                <td></td>
-              </tr>
-              
-              <tr>
-                <td>GetArticles</td>
-                <td>GET</td>
-                <td>/v1/author/{author_id}/articles</td>
-                <td></td>
-              </tr>
-              
-            
-              
-              
-              <tr>
-                <td>CreateArticle</td>
-                <td>POST</td>
-                <td>/v1/author/{author_id}/articles</td>
-                <td></td>
-              </tr>
-              
-            
-            </tbody>
-          </table>
-          
-        
-    
+        <tr>
+            <td>page</td>
+            <td><a href="#int32">int32</a></td>
+            <td></td>
+            <td><p>@inject_tag: form:&#34;page&#34; </p></td>
+        </tr>
+
+        <tr>
+            <td>page_size</td>
+            <td><a href="#int32">int32</a></td>
+            <td></td>
+            <td><p>@inject_tag: form:&#34;page_size&#34; </p></td>
+        </tr>
+
+        <tr>
+            <td>author_id</td>
+            <td><a href="#int32">int32</a></td>
+            <td></td>
+            <td><p>@inject_tag: form:&#34;author_id&#34; uri:&#34;author_id&#34; </p></td>
+        </tr>
+
+        </tbody>
+    </table>
+
+
+    <h3 id="app.app.GetArticlesResp">GetArticlesResp</h3>
+    <p></p>
+
+
+    <table class="field-table">
+        <thead>
+        <tr>
+            <td>Field</td>
+            <td>Type</td>
+            <td>Label</td>
+            <td>Description</td>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr>
+            <td>total</td>
+            <td><a href="#int64">int64</a></td>
+            <td></td>
+            <td><p></p></td>
+        </tr>
+
+        <tr>
+            <td>articles</td>
+            <td><a href="#app.app.Article">Article</a></td>
+            <td>repeated</td>
+            <td><p></p></td>
+        </tr>
+
+        </tbody>
+    </table>
+
+
+    <h3 id="app.app.BlogService">BlogService</h3>
+    <p>blog service is a blog demo</p>
+    <table class="enum-table">
+        <thead>
+        <tr>
+            <td>Method Name</td>
+            <td>Request Type</td>
+            <td>Response Type</td>
+            <td>Description</td>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr>
+            <td>GetArticles</td>
+            <td><a href="#app.app.GetArticlesReq">GetArticlesReq</a></td>
+            <td><a href="#app.app.GetArticlesResp">GetArticlesResp</a></td>
+            <td><p></p></td>
+        </tr>
+
+        <tr>
+            <td>CreateArticle</td>
+            <td><a href="#app.app.Article">Article</a></td>
+            <td><a href="#app.app.Article">Article</a></td>
+            <td><p></p></td>
+        </tr>
+
+        </tbody>
+    </table>
+
+
+    <h4>Methods with HTTP bindings</h4>
+    <table>
+        <thead>
+        <tr>
+            <td>Method Name</td>
+            <td>Method</td>
+            <td>Pattern</td>
+            <td>Body</td>
+        </tr>
+        </thead>
+        <tbody>
+
+
+        <tr>
+            <td>GetArticles</td>
+            <td>GET</td>
+            <td>/v1/articles</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>GetArticles</td>
+            <td>GET</td>
+            <td>/v1/author/{author_id}/articles</td>
+            <td></td>
+        </tr>
+
+
+        <tr>
+            <td>CreateArticle</td>
+            <td>POST</td>
+            <td>/v1/author/{author_id}/articles</td>
+            <td></td>
+        </tr>
+
+
+        </tbody>
+    </table>
+
 
     <h2 id="scalar-value-types">Scalar Value Types</h2>
     <table class="scalar-value-types-table">
-      <thead>
-        <tr><td>.proto Type</td><td>Notes</td><td>C++</td><td>Java</td><td>Python</td><td>Go</td><td>C#</td><td>PHP</td><td>Ruby</td></tr>
-      </thead>
-      <tbody>
-        
-          <tr id="double">
+        <thead>
+        <tr>
+            <td>.proto Type</td>
+            <td>Notes</td>
+            <td>C++</td>
+            <td>Java</td>
+            <td>Python</td>
+            <td>Go</td>
+            <td>C#</td>
+            <td>PHP</td>
+            <td>Ruby</td>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr id="double">
             <td>double</td>
             <td></td>
             <td>double</td>
@@ -422,7 +427,7 @@
             <td>double</td>
             <td>float</td>
             <td>Float</td>
-          </tr>
+        </tr>
         
           <tr id="float">
             <td>float</td>
