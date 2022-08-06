@@ -175,28 +175,26 @@
         
           
           <li>
-            <a href="#contract%2fabc%2fapp.proto">contract/abc/app.proto</a>
-              <ul>
-
-                  <li>
-                      <a href="#app.app.CccDddReply"><span class="badge">M</span>CccDddReply</a>
-                  </li>
-
-                  <li>
-                      <a href="#app.app.CccDddRequest"><span class="badge">M</span>CccDddRequest</a>
-                  </li>
-
-                  <li>
-                      <a href="#app.app.InnerMessage"><span class="badge">M</span>InnerMessage</a>
-                  </li>
-
-                  <li>
-                      <a href="#app.app.OuterMessage"><span class="badge">M</span>OuterMessage</a>
-                  </li>
-
-
-                  <li>
-                      <a href="#app.app.CccDdd"><span class="badge">S</span>CccDdd</a>
+            <a href="#contract%2fapp%2fapp.proto">contract/app/app.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#app.app.Article"><span class="badge">M</span>Article</a>
+                </li>
+              
+                <li>
+                  <a href="#app.app.GetArticlesReq"><span class="badge">M</span>GetArticlesReq</a>
+                </li>
+              
+                <li>
+                  <a href="#app.app.GetArticlesResp"><span class="badge">M</span>GetArticlesResp</a>
+                </li>
+              
+              
+              
+              
+                <li>
+                  <a href="#app.app.BlogService"><span class="badge">S</span>BlogService</a>
                 </li>
               
             </ul>
@@ -206,323 +204,213 @@
       </ul>
     </div>
 
+    
+      
+      <div class="file-heading">
+        <h2 id="contract/app/app.proto">contract/app/app.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
 
-    <div class="file-heading">
-        <h2 id="contract/abc/app.proto">contract/abc/app.proto</h2><a href="#title">Top</a>
-    </div>
-    <p></p>
+      
+        <h3 id="app.app.Article">Article</h3>
+        <p></p>
 
-
-    <h3 id="app.app.CccDddReply">CccDddReply</h3>
-    <p>Hello返回结果</p>
-
-
-    <table class="field-table">
-        <thead>
-        <tr>
-            <td>Field</td>
-            <td>Type</td>
-            <td>Label</td>
-            <td>Description</td>
-        </tr>
-        </thead>
-        <tbody>
-
-        <tr>
-            <td>message</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-            <td><p>结果信息 </p></td>
-        </tr>
-
-        <tr>
-            <td>data</td>
-            <td><a href="#base.resp.BaseResp">base.resp.BaseResp</a></td>
-            <td></td>
-            <td><p></p></td>
-        </tr>
-
-        </tbody>
-    </table>
-
-
-    <h4>Validated Fields</h4>
-    <table>
-        <thead>
-        <tr>
-            <td>Field</td>
-            <td>Validations</td>
-        </tr>
-        </thead>
-        <tbody>
-
-        <tr>
-            <td>message</td>
-            <td>
-                <ul>
-
-                    <li>regex: ^[A-Za-z]&#43;$</li>
-
-                </ul>
-            </td>
-        </tr>
-
-        </tbody>
-    </table>
-
-
-    <h3 id="app.app.CccDddRequest">CccDddRequest</h3>
-    <p>Hello请求参数</p>
-
-
-    <table class="field-table">
-        <thead>
-        <tr>
-            <td>Field</td>
-            <td>Type</td>
-            <td>Label</td>
-            <td>Description</td>
-        </tr>
-        </thead>
-        <tbody>
-
-        <tr>
-            <td>name</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-            <td><p>用户名字 </p></td>
-        </tr>
-
-        <tr>
-            <td>age</td>
-            <td><a href="#int32">int32</a></td>
-            <td></td>
-            <td><p></p></td>
-        </tr>
-
-        </tbody>
-    </table>
-
-
-    <h4>Validated Fields</h4>
-    <table>
-        <thead>
-        <tr>
-            <td>Field</td>
-            <td>Validations</td>
-        </tr>
-        </thead>
-        <tbody>
-
-        <tr>
-            <td>name</td>
-            <td>
-                <ul>
-
-                    <li>regex: ^[A-Za-z]&#43;$</li>
-
-                </ul>
-            </td>
-        </tr>
-
-        <tr>
-            <td>age</td>
-            <td>
-                <ul>
-
-                    <li>int_gt: 0</li>
-
-                    <li>int_lt: 100</li>
-
-                    <li>human_error: 年龄大于0 小于100</li>
-
-                </ul>
-            </td>
-        </tr>
-
-        </tbody>
-    </table>
-
-
-    <h3 id="app.app.InnerMessage">InnerMessage</h3>
-    <p></p>
-
-
-    <table class="field-table">
-        <thead>
+        
+          <table class="field-table">
+            <thead>
               <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
             </thead>
             <tbody>
-
-            <tr>
-                <td>some_integer</td>
-                <td><a href="#int32">int32</a></td>
-                <td></td>
-                <td><p>some_integer can only be in range (1, 100). </p></td>
-            </tr>
-
-            <tr>
-                <td>some_float</td>
-                <td><a href="#double">double</a></td>
-                <td></td>
-                <td><p>some_float can only be in range (0;1). </p></td>
-            </tr>
-
+              
+                <tr>
+                  <td>title</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>content</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>author_id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>@inject_tag: form:&#34;author_id&#34; uri:&#34;author_id&#34; </p></td>
+                </tr>
+              
             </tbody>
-    </table>
+          </table>
 
+          
 
-    <h4>Validated Fields</h4>
-    <table>
-        <thead>
-        <tr>
-            <td>Field</td>
-            <td>Validations</td>
-        </tr>
-        </thead>
-        <tbody>
+        
+      
+        <h3 id="app.app.GetArticlesReq">GetArticlesReq</h3>
+        <p></p>
 
-        <tr>
-            <td>some_integer</td>
-            <td>
-                <ul>
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>title</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>@inject_tag: form:&#34;title&#34; </p></td>
+                </tr>
+              
+                <tr>
+                  <td>page</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>@inject_tag: form:&#34;page&#34; </p></td>
+                </tr>
+              
+                <tr>
+                  <td>page_size</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>@inject_tag: form:&#34;page_size&#34; </p></td>
+                </tr>
+              
+                <tr>
+                  <td>author_id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>@inject_tag: form:&#34;author_id&#34; uri:&#34;author_id&#34; </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
 
-                    <li>int_gt: 0</li>
+          
 
-                    <li>int_lt: 100</li>
+        
+      
+        <h3 id="app.app.GetArticlesResp">GetArticlesResp</h3>
+        <p></p>
 
-                    <li>human_error: 自定义错误</li>
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>total</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>articles</td>
+                  <td><a href="#app.app.Article">Article</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
 
-                </ul>
-            </td>
-        </tr>
+          
 
-        <tr>
-            <td>some_float</td>
-            <td>
-                <ul>
+        
+      
 
-                    <li>float_gte: 0</li>
+      
 
-                    <li>float_lte: 1</li>
+      
 
-                </ul>
-            </td>
-        </tr>
+      
+        <h3 id="app.app.BlogService">BlogService</h3>
+        <p>blog service is a blog demo</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>GetArticles</td>
+                <td><a href="#app.app.GetArticlesReq">GetArticlesReq</a></td>
+                <td><a href="#app.app.GetArticlesResp">GetArticlesResp</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>CreateArticle</td>
+                <td><a href="#app.app.Article">Article</a></td>
+                <td><a href="#app.app.Article">Article</a></td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
 
-        </tbody>
-    </table>
-
-
-    <h3 id="app.app.OuterMessage">OuterMessage</h3>
-    <p></p>
-
-
-    <table class="field-table">
-        <thead>
-        <tr>
-            <td>Field</td>
-            <td>Type</td>
-            <td>Label</td>
-            <td>Description</td>
-        </tr>
-        </thead>
-        <tbody>
-
-        <tr>
-            <td>important_string</td>
-            <td><a href="#string">string</a></td>
-            <td></td>
-            <td><p>important_string must be a lowercase alpha-numeric of 5 to 30 characters (RE2 syntax). </p></td>
-        </tr>
-
-        <tr>
-            <td>inner</td>
-            <td><a href="#app.app.InnerMessage">InnerMessage</a></td>
-            <td></td>
-            <td><p></p></td>
-        </tr>
-
-        </tbody>
-    </table>
-
-
-    <h4>Validated Fields</h4>
-    <table>
-        <thead>
-        <tr>
-            <td>Field</td>
-            <td>Validations</td>
-        </tr>
-        </thead>
-        <tbody>
-
-        <tr>
-            <td>important_string</td>
-            <td>
-                <ul>
-
-                    <li>regex: ^[a-z0-9]{5,30}$</li>
-
-                </ul>
-            </td>
-        </tr>
-
-        <tr>
-            <td>inner</td>
-            <td>
-                <ul>
-
-                    <li>msg_exists: true</li>
-
-                </ul>
-            </td>
-        </tr>
-
-        </tbody>
-    </table>
-
-
-    <h3 id="app.app.CccDdd">CccDdd</h3>
-    <p>描述该服务的信息</p>
-    <table class="enum-table">
-        <thead>
-        <tr>
-            <td>Method Name</td>
-            <td>Request Type</td>
-            <td>Response Type</td>
-            <td>Description</td>
-        </tr>
-        </thead>
-        <tbody>
-
-        <tr>
-            <td>ApiCccDddService</td>
-            <td><a href="#app.app.CccDddRequest">CccDddRequest</a></td>
-            <td><a href="#app.app.CccDddReply">CccDddReply</a></td>
-            <td><p>描述该方法的功能</p></td>
-        </tr>
-
-        </tbody>
-    </table>
-
+        
+          
+          
+          <h4>Methods with HTTP bindings</h4>
+          <table>
+            <thead>
+              <tr>
+                <td>Method Name</td>
+                <td>Method</td>
+                <td>Pattern</td>
+                <td>Body</td>
+              </tr>
+            </thead>
+            <tbody>
+            
+              
+              
+              <tr>
+                <td>GetArticles</td>
+                <td>GET</td>
+                <td>/v1/articles</td>
+                <td></td>
+              </tr>
+              
+              <tr>
+                <td>GetArticles</td>
+                <td>GET</td>
+                <td>/v1/author/{author_id}/articles</td>
+                <td></td>
+              </tr>
+              
+            
+              
+              
+              <tr>
+                <td>CreateArticle</td>
+                <td>POST</td>
+                <td>/v1/author/{author_id}/articles</td>
+                <td></td>
+              </tr>
+              
+            
+            </tbody>
+          </table>
+          
+        
+    
 
     <h2 id="scalar-value-types">Scalar Value Types</h2>
     <table class="scalar-value-types-table">
-        <thead>
-        <tr>
-            <td>.proto Type</td>
-            <td>Notes</td>
-            <td>C++</td>
-            <td>Java</td>
-            <td>Python</td>
-            <td>Go</td>
-            <td>C#</td>
-            <td>PHP</td>
-            <td>Ruby</td>
-        </tr>
-        </thead>
-        <tbody>
+      <thead>
+        <tr><td>.proto Type</td><td>Notes</td><td>C++</td><td>Java</td><td>Python</td><td>Go</td><td>C#</td><td>PHP</td><td>Ruby</td></tr>
+      </thead>
+      <tbody>
         
           <tr id="double">
             <td>double</td>

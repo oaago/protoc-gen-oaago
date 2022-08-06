@@ -27,7 +27,7 @@ const (
 
 var methodSets = make(map[string]int)
 
-// generateFile generates a _gin.pb.go file.
+// generateFile generates a _http.pb.go file.
 func generateFile(gen *protogen.Plugin, file *protogen.File) *protogen.GeneratedFile {
 	if len(file.Services) == 0 {
 		return nil
@@ -72,7 +72,6 @@ func genService(gen *protogen.Plugin, file *protogen.File, g *protogen.Generated
 
 func genMethod(m *protogen.Method) []*method {
 	var methods []*method
-
 	// 存在 http rule 配置
 	rule, ok := proto.GetExtension(m.Desc.Options(), annotations.E_Http).(*annotations.HttpRule)
 	if rule != nil && ok {
@@ -82,7 +81,6 @@ func genMethod(m *protogen.Method) []*method {
 		methods = append(methods, buildHTTPRule(m, rule))
 		return methods
 	}
-
 	// 不存在走默认流程
 	methods = append(methods, defaultMethod(m))
 	return methods

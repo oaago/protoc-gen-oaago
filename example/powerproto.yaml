@@ -1,5 +1,5 @@
 scopes:
-    - ./
+    - ./contract
 protoc: v3.20.1
 protocWorkDir: ""
 plugins:
@@ -8,7 +8,7 @@ plugins:
     protoc-gen-grpc-gateway: github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v2.11.0
     protoc-gen-openapiv2: github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2.11.0
     protoc-gen-oaago: github.com/oaago/protoc-gen-oaago@v0.0.2
-    protoc-gen-govalidators: github.com/oaago/go-proto-validators/protoc-gen-govalidators@v0.3.4
+    protoc-gen-govalidators: github.com/mwitkow/go-proto-validators/protoc-gen-govalidators@v0.3.2
     protoc-gen-doc: github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc@v1.5.1
     protoc-go-inject-tag: github.com/favadi/protoc-go-inject-tag@v1.3.0
 repositories:
@@ -39,7 +39,7 @@ importPaths:
     - $GOGO_PROTOBUF
     - $GOPATH/pkg/mod
     - ./contract
-postActions: [ ]
+postActions: []
 postShell: ""
 #               cd example
 #               protoc -I ./ -I ./contract \

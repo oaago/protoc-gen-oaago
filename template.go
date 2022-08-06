@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	_ "embed"
+	"errors"
 	"fmt"
 	"html/template"
 	"strings"
@@ -16,8 +17,9 @@ type service struct {
 	FullName string // helloworld.Greeter
 	FilePath string // api/helloworld/helloworld.proto
 
-	Methods   []*method
-	MethodSet map[string]*method
+	Methods    []*method
+	MethodSet  map[string]*method
+	Middleware map[string][]string
 }
 
 func (s *service) execute() string {
@@ -26,6 +28,18 @@ func (s *service) execute() string {
 		for _, m := range s.Methods {
 			m := m
 			s.MethodSet[m.Name] = m
+			mid := strings.Split(m.Path, "|")
+			if len(mid) == 2 {
+				mm := strings.Split(mid[1], ",")
+				if len(mm) == 1 {
+					s.Middleware[m.Name] = append(s.Middleware[m.Name], mm[0])
+				} else if len(mm) > 1 {
+					s.Middleware[m.Name] = mm
+				} else {
+					err := errors.New("规则不合法")
+					panic(err)
+				}
+			}
 		}
 	}
 	buf := new(bytes.Buffer)

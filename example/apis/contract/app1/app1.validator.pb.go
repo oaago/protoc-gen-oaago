@@ -5,12 +5,12 @@ package app1
 
 import (
 	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
-	_ "github.com/oaago/go-proto-validators"
-	github_com_oaago_go_proto_validators "github.com/oaago/go-proto-validators"
-	_ "github.com/oaago/protoc-gen-oaago/example/apis/contract/base"
 	math "math"
+	proto "github.com/golang/protobuf/proto"
+	_ "github.com/oaago/protoc-gen-oaago/example/apis/contract/base"
+	_ "github.com/oaago/go-proto-validators"
 	regexp "regexp"
+	github_com_oaago_go_proto_validators "github.com/oaago/go-proto-validators"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
