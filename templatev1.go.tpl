@@ -153,7 +153,8 @@ func (s *{{$.Name}}) {{ .HandlerName }} (ctx *oaa.Ctx) {
 
 func (s *{{$.Name}}) RegisterService() {
 {{range .Methods}}
-s.router.Handle("{{.Method}}", "/api/{{.Path}}", oaa.NewHandler(s.{{ .HandlerName }}))
+s.router.Handle("{{.Method}}", "{{.Path}}", oaa.NewHandler(s.{{ .HandlerName }}))
+// s.router.Handle("{{.Method}}", "{{.Path}}", {{$.Middleware[$.Name]}}, oaa.NewHandler(s.{{.HandlerName}}))
 {{end}}
 }
 
